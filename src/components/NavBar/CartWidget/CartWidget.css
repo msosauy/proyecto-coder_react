@@ -23,6 +23,10 @@
   animation: bounce 5s 1;
 }
 
+.cart:hover {
+  animation: bounce 5s 1;
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(0);
