@@ -1,0 +1,99 @@
+.item__detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 600px;
+  width: 600px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.item__header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item__main__section {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.item__sec h4{
+    color: red;
+}
+
+.item__left__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.item__detail__tittle {
+  color: black;
+}
+
+.item__detail__subTittle {
+  color: grey;
+}
+
+.item__sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.item__right__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.item__right__section p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px 0 50px;
+}
+
+.shop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop button {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+
+.card__addCart button {
+  width: 150px;
+}
+
+.card button {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+
+.card__addCart button {
+  height: 30px;
+  width: 150px;
+}
+
+picture img {
+    max-height: 100px;
+}
