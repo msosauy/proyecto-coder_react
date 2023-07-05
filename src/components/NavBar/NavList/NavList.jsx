@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./NavList.css";
 
 function NavList() {
@@ -5,13 +6,13 @@ function NavList() {
     <nav>
       <ul className="nav__list">
         <li>
-          <a>Productos</a>
+          <NavLink to={`category/SOHO`} className={({isAcive}) => isAcive ? 'ActiveOption' : 'Option'} style={{textDecoration: "none"}}>SOHO</NavLink>
         </li>
         <li>
-          <a>Noticias</a>
+          <NavLink to={`category/Profesional`} className={({isAcive}) => isAcive ? 'ActiveOption' : 'Option'} style={{textDecoration: "none"}}>Profesional</NavLink>
         </li>
         <li>
-          <a>Contacto</a>
+          <NavLink to={`category/Enterprise`} className={({isAcive}) => isAcive ? 'ActiveOption' : 'Option'} style={{textDecoration: "none"}}>Enterprise</NavLink>
         </li>
       </ul>
     </nav>
