@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ShopSection({stock, itemId, onAdd}) {
   const [counter, setCounter] = useState(0);
@@ -23,7 +24,7 @@ function ShopSection({stock, itemId, onAdd}) {
         <button onClick={addCounter}>+</button>
       </div>
       <div className="card__addCart">
-        <button onClick={() => onAdd({counter, itemId})} disabled={!stock}>Agregar</button>
+        <Link to={"/"}><button onClick={() => onAdd({counter, itemId})} disabled={!stock || !counter}>Comprar</button></Link>
       </div>
     </>
   );

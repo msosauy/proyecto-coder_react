@@ -1,8 +1,30 @@
 main {
   display: flex;
+  flex-direction: column;
+}
+
+.topSection {
+  display: flex;
   justify-content: center;
   margin-top: 20px;
   gap: 30px;
+}
+
+.item__detail__tittle {
+  color: black;
+  font-size: xx-large;
+}
+
+.item__detail__subTittle {
+  color: grey;
+  font-size: x-large;
+}
+
+.bottomSection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
 }
 
 .card {
@@ -24,7 +46,7 @@ main {
 }
 
 .card__image img {
-  max-width: 300px;
+  max-width: 200px;
 }
 
 .card__info {
@@ -60,13 +82,11 @@ main {
   text-shadow: 1px 1px 10px rgba(209, 13, 13, 0.712);
 }
 
-.card button {
-  height: 30px;
-  width: 30px;
-  margin: 10px;
+.card__info__right h4{
+  color: yellow;
+  font-size: 1.5rem;
 }
 
-.card__addCart button {
-  height: 30px;
-  width: 150px;
+.card__bottom {
+  height: 60px;
 }

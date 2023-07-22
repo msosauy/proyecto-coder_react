@@ -1,7 +1,6 @@
-import ShopSection from "./ShopSection/ShopSection";
+import { Link } from "react-router-dom";
 
-function Card({ cardItems, onAdd  }) {
-
+function Card({ cardItems }) {
   return (
     <>
       {cardItems.map((card) => (
@@ -15,10 +14,15 @@ function Card({ cardItems, onAdd  }) {
               <h3>{card.model}</h3>
             </div>
             <div className="card__info__right">
-              <span>{card.price}</span>
+              <span>U$S {card.price}</span>
+              <h4>Stock {card.stock}</h4>
             </div>
           </div>
-          <ShopSection stock={card.stock} itemId={card.id} onAdd={onAdd} />
+          <div className="card__bottom">
+            <Link to={`/item/${card.id}`}>
+              <button style={{ width: "100px" }}>Ver detalle</button>
+            </Link>
+          </div>
         </div>
       ))}
     </>
