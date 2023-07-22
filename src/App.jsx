@@ -2,11 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemListContainer/ItemDetailContainer/ItemDetailContainer";
-
+import { DataProvider } from "./components/context/DataContex";
 
 function App() {
   return (
     <>
+    <DataProvider>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -16,6 +17,7 @@ function App() {
           <Route path="*" element={<h1>404 NOT FUND</h1>} />
         </Routes>
       </BrowserRouter>
+    </DataProvider>
     </>
   );
 }

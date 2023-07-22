@@ -6,7 +6,7 @@ const ItemDetail = ({ id, brand, model, img, stock, info, onAdd }) => {
   return (
     <article className="item__detail">
       <header className="item__header">
-        <Link to={"/"}><button style={{width:"100px"}}>Cerrar</button></Link>
+        <Link to={"/"}><button className="closeButton">X</button></Link>
       </header>
       <section className="item__main__section">
         <section className="item__left__section">
