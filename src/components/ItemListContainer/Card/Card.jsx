@@ -19,9 +19,7 @@ function Card({ cardItems }) {
             </div>
           </div>
           <div className="card__bottom">
-            <Link to={`/item/${card.id}`}>
-              <button style={{ width: "100px" }}>Ver detalle</button>
-            </Link>
+            <Link to={`/item/${card.id}`}><button style={{ width: "100px" }}>Ver detalle</button></Link>
           </div>
         </div>
       ))}
