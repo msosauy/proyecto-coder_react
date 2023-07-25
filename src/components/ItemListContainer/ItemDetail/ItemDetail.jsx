@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ShopSection from "../ItemDetailContainer/ShopSection/ShopSection";
 import "./ItemDetail.css";
@@ -44,7 +44,7 @@ const ItemDetail = ({ id, brand, model, img, stock, info, price }) => {
       </section>
       <section className="shop">
         {quantityAdded > 0 ? (
-          <Link to="/checkout">
+          <Link to="/cart">
             <button style={{ width: "150px" }}>Finalizar Compra</button>
           </Link>
         ) : (

@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContex";
+import { Link } from "react-router-dom";
 import "./CartWidget.css";
 import img from "./assets/cart.png";
 
 function CartWidget() {
-  const { cartCount } = useContext(CartContext);
+  const { totalQuantity } = useContext(CartContext);
 
   return (
     <div className="cart">
-      <Link to="/checkout">
+      <Link to="/cart">
         <img className="cart_img" src={img} alt="car_img" />
-        <span className="cart__count">{cartCount}</span>
+        <span className="cart__count" >{totalQuantity}</span>
       </Link>
     </div>
   );
