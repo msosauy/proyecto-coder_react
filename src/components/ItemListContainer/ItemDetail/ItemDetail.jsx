@@ -5,19 +5,21 @@ import "./ItemDetail.css";
 import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ id, brand, model, img, stock, info, price }) => {
+  const { addItem } = useContext(CartContext);
 
-  const {addItem} = useContext(CartContext);
-  
   const [quantityAdded, setQuantityAdded] = useState(0);
 
   const handleOnAdd = (quantity) => {
-    setQuantityAdded(quantity)
-    
-    const item = {
-      id, model, price 
-    }
+    setQuantityAdded(quantity);
 
-    addItem(item, quantity)
+    const item = {
+      id,
+      model,
+      price,
+      brand,
+    };
+
+    addItem(item, quantity);
   };
 
   return (
@@ -44,9 +46,14 @@ const ItemDetail = ({ id, brand, model, img, stock, info, price }) => {
       </section>
       <section className="shop">
         {quantityAdded > 0 ? (
-          <Link to="/cart">
-            <button style={{ width: "150px" }}>Finalizar Compra</button>
-          </Link>
+          <>
+            <Link to={"/"}>
+              <button  style={{ width: "150px" }}>Continuar comprando</button>
+            </Link>
+            <Link to={"/cart"}>
+              <button style={{ width: "150px" }}>Finalizar Compra</button>
+            </Link>
+          </>
         ) : (
           <ShopSection stock={stock} onAdd={handleOnAdd} />
         )}

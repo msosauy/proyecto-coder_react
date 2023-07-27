@@ -11,10 +11,11 @@ function CartWidget() {
     <div className="cart">
       <Link to="/cart">
         <img className="cart_img" src={img} alt="car_img" />
-        <span className="cart__count" >{totalQuantity}</span>
+        {totalQuantity>0 ? (<span className="cart__count">{totalQuantity}</span>) : ("")}
       </Link>
     </div>
   );
 }
 
 export default CartWidget;
+
