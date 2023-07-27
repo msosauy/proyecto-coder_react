@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import ShopSection from "../ItemDetailContainer/ShopSection/ShopSection";
 import "./ItemDetail.css";
-import { CartContext } from "../../context/CartContex";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ id, brand, model, img, stock, info, price }) => {
 

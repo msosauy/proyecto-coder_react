@@ -6,6 +6,7 @@ main {
 .topSection {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 20px;
   gap: 30px;
 }

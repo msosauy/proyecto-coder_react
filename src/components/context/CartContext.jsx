@@ -11,14 +11,15 @@ export const CartProvider = ({ children }) => {
 
   //Sumatoria de precios
   useEffect(() => {
-    setTotal(cart.reduce((storage, el) => storage + (el.quantity * el.price), 0));
+    setTotal(cart.reduce((storage, el) => storage + el.quantity * el.price, 0));
   }, [cart]);
-  
-  //Cantidad total de articculos en el carrtito
+
+  //Cantidad total de articulos en el carrtito
   useEffect(() => {
     setTotalQuantity(cart.reduce((storage, el) => storage + el.quantity, 0));
   }, [cart]);
 
+  //Agrega un nuevo item
   const addItem = (item, quantity) => {
     if (!isInCart(item.id)) {
       setCart((prev) => [...prev, { ...item, quantity }]);
@@ -27,16 +28,19 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  //Elimina un item por ID
   const removeItem = (itemId) => {
     const cartUpdated = cart.filter((prod) => prod.id !== itemId);
     setCart(cartUpdated);
   };
 
+  //Vacía el carrito
   const clearCart = () => {
     setCart([]);
     setTotalQuantity(0);
   };
 
+  //Busca un item por ID en el carrito, esta función es llamada por addItem antes de agregar el nuevo item
   const isInCart = (itemId) => {
     return cart.some((prod) => prod.id === itemId);
   };
