@@ -1,10 +1,8 @@
 import React from "react";
 
-
-const CartItem = ({key, id, model, quantity, price, removeItem}) => {
-
+const CartItem = ({ id, model, quantity, price, removeItem }) => {
   return (
-    <div className="card__checkout__item">
+    <div key={Math.floor(Math.random()*1000)} className="card__checkout__item">
       <div className="card__checkout__title">
         <h3>{model}</h3>
       </div>
@@ -17,7 +15,6 @@ const CartItem = ({key, id, model, quantity, price, removeItem}) => {
       <div className="card__checkout__subtotal">
         <h3>{`SubTotal $ ${price * quantity}`}</h3>
       </div>
-      {/* <h3>{`Subtotal: $${subTotal}`}</h3> */}
       <button onClick={() => removeItem(id)}>X</button>
     </div>
   );

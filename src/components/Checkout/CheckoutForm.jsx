@@ -5,16 +5,6 @@ const CheckoutForm = ({ onBuy }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
-  const handleName = (event) => {
-    setName(event.target.value);
-  };
-  const handlePhone = (event) => {
-    setPhone(event.target.value);
-  };
-  const handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
   function sendInputs() {
     onBuy({name, phone, email});
   }
@@ -22,11 +12,11 @@ const CheckoutForm = ({ onBuy }) => {
   return (
     <>
       <label>Nombre</label>
-      <input type="text" onChange={handleName} />
+      <input type="text" onChange={(e) => setName(e.target.value)} />
       <label>Teléfono</label>
-      <input type="phone" onChange={handlePhone} />
+      <input type="phone" onChange={(e) => setPhone(e.target.value)} />
       <label>Correo Electrónico</label>
-      <input type="email" onChange={handleEmail} />
+      <input type="email" onChange={(e) => setEmail(e.target.value)} />
       <button onClick={() => sendInputs()}>Cerrar Compra</button>
     </>
   );

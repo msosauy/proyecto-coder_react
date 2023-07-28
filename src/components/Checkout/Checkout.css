@@ -1,0 +1,58 @@
+.checkout__orderEnded {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+table {
+  width: 60%;
+  font-size: large;
+}
+
+th {
+    background-color: rgb(53, 53, 156);
+    color: white;
+    height: 30px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+td {
+    background-color: white;
+  height: 30px;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.total {
+    font-size: x-large;
+}
+
+.orderBtn {
+    background-color: rgb(53, 53, 156);
+    color: white;
+    height: 30px;
+    width: 250px;
+    border-radius: 15px;
+    font-size: large;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    background-color: white;
+    color: rgb(53, 53, 156);
+    border: 1px solid grey;
+    border-radius: 15px;
+}
+
+.contact :only-child {
+    text-align: center;
+    margin: 30px;
+}
