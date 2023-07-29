@@ -30,5 +30,3 @@ function App() {
 }
 
 export default App;
-
-// onAdd={(addData) => console.log("Cantidad agregada",addData.counter," Item to add:",addData.itemId)}

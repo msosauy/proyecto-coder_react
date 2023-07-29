@@ -16,7 +16,7 @@ export const DbProvider = ({ children }) => {
   const itemsRef = collection(db, "items");
   const ordersRef = collection(db, "orders");
 
-  //Setea y retorna dbItems como un array con todos los items de la DDBB y
+  //Setea y retorna dbItems como un array con todos los items de la DDBB 
   const getItemsList = async () => {
     const data = await getDocs(itemsRef);
     const filteredData = data.docs.map((doc) => ({
@@ -38,7 +38,7 @@ export const DbProvider = ({ children }) => {
   //Devuelve el item correspondiente al ID solicidato
   const getProductById = async (orderId) => {
     const itemsList = await getItemsList()
-    return itemsList.find((prod) => prod.id == orderId);
+    return itemsList.find((prod) => prod.id === orderId);
   };
 
   //Devuelve todos los item dentro de la categoría indicada
