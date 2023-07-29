@@ -1,16 +1,19 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useEffect, useState } from "react";
-import { getProductById } from "../../../asyncMock";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { DbContext } from "./../../context/DbContext";
 import "./../ItemDetail/ItemDetail.css";
 
-const ItemDetailContainer = ({ onAdd }) => {
+const ItemDetailContainer = () => {
+
+  const {getProductById} = useContext(DbContext);
+
   const [product, setProduct] = useState(null);
 
   const { itemId } = useParams();
 
   useEffect(() => {
-    getProductById(parseInt(itemId))
+    getProductById(itemId)
       .then((response) => {
         setProduct(response);
       })
@@ -21,7 +24,7 @@ const ItemDetailContainer = ({ onAdd }) => {
 
   return (
     <div className="ItemDetailContainer bottomSection">
-      <ItemDetail onAdd={onAdd} {...product} />
+      <ItemDetail {...product} />
     </div>
   );
 };

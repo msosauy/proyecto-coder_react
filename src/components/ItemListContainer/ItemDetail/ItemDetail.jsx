@@ -1,12 +1,33 @@
-import ShopSection from "../ItemDetailContainer/ShopSection/ShopSection";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import ShopSection from "../ItemDetailContainer/ShopSection/ShopSection";
 import "./ItemDetail.css";
+import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({ id, brand, model, img, stock, info, onAdd }) => {
+const ItemDetail = ({ id, brand, model, img, stock, info, price }) => {
+  const { addItem } = useContext(CartContext);
+
+  const [quantityAdded, setQuantityAdded] = useState(0);
+
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity);
+
+    const item = {
+      id,
+      model,
+      price,
+      brand,
+    };
+
+    addItem(item, quantity);
+  };
+
   return (
     <article className="item__detail">
       <header className="item__header">
-        <Link to={"/"}><button style={{width:"100px"}}>Cerrar</button></Link>
+        <Link to={"/"}>
+          <button className="closeButton">X</button>
+        </Link>
       </header>
       <section className="item__main__section">
         <section className="item__left__section">
@@ -24,7 +45,18 @@ const ItemDetail = ({ id, brand, model, img, stock, info, onAdd }) => {
         </section>
       </section>
       <section className="shop">
-        <ShopSection stock={stock} itemId={id} onAdd={onAdd}/>
+        {quantityAdded > 0 ? (
+          <>
+            <Link to={"/"}>
+              <button  style={{ width: "150px" }}>Continuar comprando</button>
+            </Link>
+            <Link to={"/cart"}>
+              <button style={{ width: "150px" }}>Finalizar Compra</button>
+            </Link>
+          </>
+        ) : (
+          <ShopSection stock={stock} onAdd={handleOnAdd} />
+        )}
       </section>
     </article>
   );

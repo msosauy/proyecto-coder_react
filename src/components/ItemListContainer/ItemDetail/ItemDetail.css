@@ -13,7 +13,7 @@
 
 .item__header {
   display: flex;
-  justify-content: space-around;
+  justify-content: end;
 }
 
 .item__main__section {
@@ -23,7 +23,7 @@
 }
 
 .item__sec h4{
-    color: red;
+  color: red;
 }
 
 .item__left__section {
@@ -95,5 +95,12 @@
 }
 
 picture img {
-    max-height: 100px;
+  max-height: 100px;
+}
+
+.closeButton {
+  color: white;
+  background-color: inherit;
+  border: none;
+  margin-right: 20px;
 }

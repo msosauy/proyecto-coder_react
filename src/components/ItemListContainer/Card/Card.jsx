@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Card({ cardItems }) {
@@ -19,9 +20,7 @@ function Card({ cardItems }) {
             </div>
           </div>
           <div className="card__bottom">
-            <Link to={`/item/${card.id}`}>
-              <button style={{ width: "100px" }}>Ver detalle</button>
-            </Link>
+            <Link to={`/item/${card.id}`}><button style={{ width: "100px" }}>Ver detalle</button></Link>
           </div>
         </div>
       ))}

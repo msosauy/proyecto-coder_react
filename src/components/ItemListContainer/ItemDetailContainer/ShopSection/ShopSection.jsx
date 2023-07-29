@@ -1,30 +1,29 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
-function ShopSection({stock, itemId, onAdd}) {
-  const [counter, setCounter] = useState(0);
+function ShopSection({stock, onAdd}) {
+  const [quantity, setQuantity] = useState(0);
 
-  const addCounter = () => {
-    if (counter < stock) {
-      setCounter(counter + 1);
+  const addQuantity = () => {
+    if (quantity < stock) {
+      setQuantity(quantity + 1);
     }
   };
 
-  const subtractCounter = () => {
-    if (counter > 0) {
-      setCounter(counter - 1);
+  const subtractQuantity = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
     }
   };
 
   return (
     <>
       <div className="card__counter">
-        <button onClick={subtractCounter}>-</button>
-        <span>{counter}</span>
-        <button onClick={addCounter}>+</button>
+        <button onClick={subtractQuantity}>-</button>
+        <span>{quantity}</span>
+        <button onClick={addQuantity}>+</button>
       </div>
       <div className="card__addCart">
-        <Link to={"/"}><button onClick={() => onAdd({counter, itemId})} disabled={!stock || !counter}>Comprar</button></Link>
+        <button onClick={() => onAdd(quantity)} disabled={!stock || !quantity}>Comprar</button>
       </div>
     </>
   );
